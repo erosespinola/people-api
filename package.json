@@ -1,0 +1,28 @@
+{
+  "name": "boilerplate-nodejs",
+  "version": "1.0.0",
+  "description": "Basic setup for a node.js project",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon src/index.js",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/erosespinola/boilerplate-nodejs.git"
+  },
+  "author": "Eros Espínola",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/erosespinola/boilerplate-nodejs/issues"
+  },
+  "homepage": "https://github.com/erosespinola/boilerplate-nodejs#readme",
+  "dependencies": {
+    "dotenv": "^8.0.0",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "jest": "^24.8.0",
+    "nodemon": "^1.19.1"
+  }
+}
