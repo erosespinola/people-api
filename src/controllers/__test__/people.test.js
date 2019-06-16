@@ -204,5 +204,15 @@ describe("people controller", () => {
         { suggested: "eeeeros@mail.com" }
       ]
     });
+    expect(
+      controller.getSuggested(
+        {
+          data: [{ email_address: "eros@mail.com" }]
+        },
+        "some@mail.com"
+      )
+    ).toEqual({
+      data: [{ suggested: "No suggestions found" }]
+    });
   });
 });

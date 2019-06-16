@@ -32,7 +32,6 @@ const getCount = email => {
 
 const getSuggested = (people, email) => {
   const emails = people.data.map(({ email_address }) => email_address);
-
   const matching = [];
 
   emails.forEach(user => {
@@ -43,6 +42,11 @@ const getSuggested = (people, email) => {
       matching.push({ suggested: user });
     }
   });
+
+  if (matching.length === 0) {
+    matching.push({ suggested: "No suggestions found" });
+  }
+
   return { data: matching };
 };
 
