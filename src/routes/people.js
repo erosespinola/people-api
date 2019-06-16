@@ -13,4 +13,9 @@ router.get("/", (req, res) => {
     .catch(({ message }) => res.status(500).json({ message }));
 });
 
+router.get("/:email", (req, res) => {
+  const { email } = req.params;
+  return res.status(200).json(controller.getCount(email));
+});
+
 module.exports = router;

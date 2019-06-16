@@ -158,4 +158,25 @@ describe("people controller", () => {
       ]
     });
   });
+
+  test("should count and sort characters", () => {
+    expect(controller.getCount("")).toEqual({
+      data: []
+    });
+    expect(controller.getCount("eros@mail.com")).toEqual({
+      data: [
+        { count: 2, key: "m" },
+        { count: 2, key: "o" },
+        { count: 1, key: "e" },
+        { count: 1, key: "s" },
+        { count: 1, key: "@" },
+        { count: 1, key: "r" },
+        { count: 1, key: "a" },
+        { count: 1, key: "i" },
+        { count: 1, key: "l" },
+        { count: 1, key: "." },
+        { count: 1, key: "c" }
+      ]
+    });
+  });
 });
