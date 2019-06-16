@@ -179,4 +179,30 @@ describe("people controller", () => {
       ]
     });
   });
+
+  test("should suggest similar emails", () => {
+    expect(
+      controller.getSuggested(
+        {
+          data: [
+            { email_address: "eros@mail.com" },
+            { email_address: "eros@some.com" },
+            { email_address: "erso@mail.com" },
+            { email_address: "some@gmail.com" },
+            { email_address: "sore@gmail.com" },
+            { email_address: "eeeeros@mail.com" },
+            { email_address: "random@mail.com" }
+          ]
+        },
+        "eros@mail.com"
+      )
+    ).toEqual({
+      data: [
+        "eros@some.com",
+        "erso@mail.com",
+        "sore@gmail.com",
+        "eeeeros@mail.com"
+      ]
+    });
+  });
 });
