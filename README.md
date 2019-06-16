@@ -1,10 +1,4 @@
-## boilerplate-nodejs
-
-Basic setup for a node.js project that includes:
-- node.js
-- express 
-- jest
-- dotenv
+## people-api
 
 ### Scripts
 - `npm start`
