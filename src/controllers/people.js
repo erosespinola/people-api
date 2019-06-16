@@ -33,11 +33,15 @@ const getCount = email => {
 const getSuggested = (people, email) => {
   const emails = people.data.map(({ email_address }) => email_address);
 
-  const matching = emails.filter(user => {
+  const matching = [];
+
+  emails.forEach(user => {
     if (user === email) return false;
     const userKeys = Object.keys(getCharMap(getUser(user))).sort();
     const emailKeys = Object.keys(getCharMap(getUser(email))).sort();
-    return JSON.stringify(userKeys) === JSON.stringify(emailKeys);
+    if (JSON.stringify(userKeys) === JSON.stringify(emailKeys)) {
+      matching.push({ suggested: user });
+    }
   });
   return { data: matching };
 };

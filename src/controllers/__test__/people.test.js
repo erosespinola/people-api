@@ -198,10 +198,10 @@ describe("people controller", () => {
       )
     ).toEqual({
       data: [
-        "eros@some.com",
-        "erso@mail.com",
-        "sore@gmail.com",
-        "eeeeros@mail.com"
+        { suggested: "eros@some.com" },
+        { suggested: "erso@mail.com" },
+        { suggested: "sore@gmail.com" },
+        { suggested: "eeeeros@mail.com" }
       ]
     });
   });
